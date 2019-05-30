@@ -116,7 +116,7 @@ while true; do
   read -p 'Now download and set dotfiles? [Y/n]' Answer
   case $Answer in
     '' | [Yy]* )
-      $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/appstore.sh
+      sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
       break;
       ;;
     [Nn]* )
