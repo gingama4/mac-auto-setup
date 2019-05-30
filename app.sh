@@ -21,6 +21,7 @@ brew cask install docker
 brew cask install dropbox
 brew cask install eclipse-java
 brew cask install google-chrome
+brew cask install vivaldi
 brew cask install iterm2
 brew cask install sourcetree
 brew cask install teamviewer
