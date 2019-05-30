@@ -65,11 +65,25 @@ echo " ------------ END ------------"
 #
 # Install dotfiles system
 #
-#echo " ---------- dotfiles ---------"
-#sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
-#cp $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/settings/zsh/private.zsh ~/.yadr/zsh/private.zsh
-#source ~/.zshrc
-#echo " ------------ END ------------"
+echo " ---------- dotfiles ---------"
+while true; do
+  read -p 'Now download and set dotfiles? [Y/n]' Answer
+  case $Answer in
+    '' | [Yy]* )
+      sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
+      cp $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/settings/zsh/private.zsh ~/.yadr/zsh/private.zsh
+      source ~/.zshrc
+      break;
+      ;;
+    [Nn]* )
+      echo "Skip dotfiles"
+      break;
+      ;;
+    * )
+      echo Please answer YES or NO.
+  esac
+done;
+echo " ------------ END ------------"
 
 #
 # Kryptco
@@ -112,18 +126,3 @@ while true; do
   esac
 done;
 
-while true; do
-  read -p 'Now download and set dotfiles? [Y/n]' Answer
-  case $Answer in
-    '' | [Yy]* )
-      sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
-      break;
-      ;;
-    [Nn]* )
-      echo "Skip setup"
-      break;
-      ;;
-    * )
-      echo Please answer YES or NO.
-  esac
-done;
