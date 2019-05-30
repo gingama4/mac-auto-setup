@@ -29,5 +29,7 @@ brew cask install virtualbox
 brew cask install virtualbox-extension-pack
 brew cask install google-japanese-ime
 brew cask install visual-studio-code
+brew cask install adobe-acrobat-reader
+brew cask install karabiner-elements
 echo " ------------ END ------------"
 
