@@ -1,7 +1,7 @@
 #!/bin/bash
 cat << EOS
 
- noumi0k
+ gingama4
 
  The elapsed time does not matter.
  Because speed is important.
@@ -32,8 +32,8 @@ git --version
 echo " ------------ END ------------"
 
 #
-# noumi0k/mac-auto-setup.git
+# gingama4/mac-auto-setup.git
 #
-echo " ------------ noumi0k/mac-auto-setup.git ------------"
-git clone https://github.com/noumi0k/mac-auto-setup.git
+echo " ------------ gingama4/mac-auto-setup.git ------------"
+git clone https://github.com/gingama4/mac-auto-setup.git
 echo " ------------ END ------------"
