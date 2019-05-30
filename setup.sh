@@ -100,11 +100,27 @@ while true; do
   read -p 'Now install App Store apps? [Y/n]' Answer
   case $Answer in
     '' | [Yy]* )
-      $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/appstore.sh
+      git clone https://github.com/gingama4/dotfiles.git
       break;
       ;;
     [Nn]* )
       echo "Skip install"
+      break;
+      ;;
+    * )
+      echo Please answer YES or NO.
+  esac
+done;
+
+while true; do
+  read -p 'Now download and set dotfiles? [Y/n]' Answer
+  case $Answer in
+    '' | [Yy]* )
+      $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/appstore.sh
+      break;
+      ;;
+    [Nn]* )
+      echo "Skip setup"
       break;
       ;;
     * )
