@@ -71,7 +71,6 @@ while true; do
   case $Answer in
     '' | [Yy]* )
       sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
-      cp $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/settings/zsh/private.zsh ~/.yadr/zsh/private.zsh
       source ~/.zshrc
       break;
       ;;
