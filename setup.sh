@@ -32,13 +32,6 @@ chsh -s /usr/local/bin/zsh
 echo " ------------ END ------------"
 
 #
-# Install oh-my-zsh
-#
-echo " ---------------- Oh My Zsh ------------"
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-echo" ------------ END ------------"
-
-#
 # Install vim
 #
 echo " ------------ Vim ------------"
@@ -46,21 +39,29 @@ brew install vim --with-override-system-vi
 echo " ------------ END ------------"
 
 #
+# Powerline
+#
+echo " --------- Powerline ---------"
+# Font is 14pt Iconsolata for Powerline with Solarized Dark iterm2 colors.
+git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
+git clone https://github.com/powerline/fonts.git ~/fonts
+~/fonts/install.sh
+echo " ------------ END ------------"
 
 #
 # Install ruby
 #
-#echo " ----------- Ruby ------------"
-#brew install rbenv
-#brew install ruby-build
-#rbenv --version
-#rbenv install -l
-#ruby_latest=$(rbenv install -l | grep -v '[a-z]' | tail -1 | sed 's/ //g')
-#rbenv install $ruby_latest
-#rbenv global $ruby_latest
-#rbenv rehash
-#ruby -v
-#echo " ------------ END ------------"
+echo " ----------- Ruby ------------"
+brew install rbenv
+brew install ruby-build
+rbenv --version
+rbenv install -l
+ruby_latest=$(rbenv install -l | grep -v '[a-z]' | tail -1 | sed 's/ //g')
+rbenv install $ruby_latest
+rbenv global $ruby_latest
+rbenv rehash
+ruby -v
+echo " ------------ END ------------"
 
 #
 # Install dotfiles system
@@ -71,6 +72,7 @@ while true; do
   case $Answer in
     '' | [Yy]* )
       sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
+      cp $(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/settings/zsh/private.zsh ~/.yadr/zsh/private.zsh
       source ~/.zshrc
       break;
       ;;
@@ -84,13 +86,6 @@ while true; do
 done;
 echo " ------------ END ------------"
 
-#
-# Kryptco
-#
-#echo " ---------- kryptco ---------"
-#brew install --HEAD kryptco/tap/kr
-#kr pair
-#echo " ---------- END ---------"
 
 
 while true; do

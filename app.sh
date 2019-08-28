@@ -27,9 +27,11 @@ brew cask install sourcetree
 brew cask install teamviewer
 brew cask install virtualbox
 brew cask install virtualbox-extension-pack
+brew cask install vagrant
 brew cask install google-japanese-ime
 brew cask install visual-studio-code
 brew cask install adobe-acrobat-reader
 brew cask install karabiner-elements
+brew cask install discord
 echo " ------------ END ------------"
 
